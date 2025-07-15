@@ -6,7 +6,7 @@ const News = () => {
     {
       date: 'October 2022',
       title: 'Yunimall Wins EDC-PAU Demo Day',
-      description: 'Our platform was recognized as the top student business solution at the Entrepreneurship Development Center Demo Day at Pan-Atlantic University.',
+      description: 'Our platform was recognized as the top student business solution at the Enterprise Development Centre Demo Day at Pan-Atlantic University.',
       image: 'demo-day-winner.jpg',
       category: 'Award',
       icon: Trophy,

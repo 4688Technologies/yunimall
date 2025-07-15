@@ -5,7 +5,7 @@ const About = () => {
     {
       year: '2021',
       title: 'The Beginning',
-      description: 'Founded by 10 passionate students at Pan-Atlantic University',
+      description: 'Founded by passionate students at Pan-Atlantic University',
       icon: Calendar,
       color: 'bg-blue-500'
     },
@@ -48,7 +48,7 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg">
               <p className="text-gray-700 leading-relaxed">
-                Yunimall was born from the entrepreneurial spirit of 10 students at Pan-Atlantic University 
+                Yunimall was born from the entrepreneurial spirit of students at Pan-Atlantic University 
                 who saw the potential to connect student businesses across African campuses. What started as 
                 a simple idea has evolved into a comprehensive platform that empowers student entrepreneurs 
                 while serving the unique needs of the student community.

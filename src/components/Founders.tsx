@@ -3,29 +3,28 @@ import { Award, Briefcase, GraduationCap, Linkedin } from 'lucide-react';
 const Founders = () => {
   const founders = [
     {
-      name: 'Ayomide Abiola',
-      role: 'COO/CFO',
-      image: 'ayomide.jpg',
-      achievements: [
-        'PAU Entrepreneurship Award Winner',
-        'Student Leadership Excellence',
-        'Financial Management Expert',
-        'Strategic Operations Leader'
-      ],
-      bio: 'Leading operations and financial strategy at Yunimall with a passion for student entrepreneurship and sustainable business growth.',
-      linkedin: '#'
-    },
-    {
       name: 'Augustine Achike',
       role: 'CEO',
       image: 'augustine.jpg',
       achievements: [
         'Visionary Leader',
-        'Tech Innovation Expert',
         'Student Advocate',
-        'Platform Strategist'
+        'PAU Entrepreneurship Award Winner',
+        'Student Leadership Excellence'
       ],
-      bio: 'Driving the vision of Yunimall to become Africa\'s premier student business platform through innovative technology and strategic partnerships.',
+      bio: "Driving the vision of Yunimall to become Africa's premier student business platform through innovative technology and strategic partnerships. Passionate about student entrepreneurship.",
+      linkedin: '#'
+    },
+    {
+      name: 'Ayomide Abiola',
+      role: 'COO/CFO',
+      image: 'ayomide.jpg',
+      achievements: [
+        'Financial Management Expert',
+        'Strategic Operations Leader',
+        'Student Leadership Excellence'
+      ],
+      bio: 'Leading operations and financial strategy at Yunimall',
       linkedin: '#'
     }
   ];
@@ -35,7 +34,7 @@ const Founders = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-blue-900 mb-4">
-            Meet the Founders
+            Meet the Team
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             The passionate leaders behind Yunimall's mission to empower student entrepreneurs

@@ -70,7 +70,7 @@ const WhatWeOffer = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
-                <span className="text-2xl font-bold text-blue-900">85%</span>
+                <span className="text-2xl font-bold text-blue-900">94%</span>
                 <p className="text-sm text-gray-600">Students interested</p>
               </div>
               <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
@@ -80,6 +80,10 @@ const WhatWeOffer = () => {
               <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
                 <span className="text-2xl font-bold text-green-600">78%</span>
                 <p className="text-sm text-gray-600">Run or want to run businesses</p>
+              </div>
+               <div className="bg-white px-6 py-3 rounded-lg shadow-sm">
+                <span className="text-2xl font-bold text-green-600">71%</span>
+                <p className="text-sm text-gray-600">Reported that students make up the majority of their business</p>
               </div>
             </div>
           </div>

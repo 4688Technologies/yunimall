@@ -78,10 +78,6 @@ const VisionMission = () => {
               <div className="space-y-4">
                 <div className="flex items-start space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
-                  <p className="text-blue-100">Reducing financial barriers for students</p>
-                </div>
-                <div className="flex items-start space-x-3">
-                  <div className="w-2 h-2 bg-yellow-400 rounded-full mt-2"></div>
                   <p className="text-blue-100">Creating sustainable income opportunities</p>
                 </div>
                 <div className="flex items-start space-x-3">
