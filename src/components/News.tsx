@@ -4,6 +4,15 @@ import { Trophy, Users, Calendar, ExternalLink } from 'lucide-react';
 const News = () => {
   const milestones = [
     {
+      date: 'December 2024',
+      title: 'Co-Founder wins Award',
+      description: 'Our Co-founder wins the Entrepreneurship Award at Pan-Atlantic University, a proud moment that highlights the exceptional talent and innovation driving Yunimall forward.',
+      image: 'augustine-award.jpg',
+      category: 'Award',
+      icon: Trophy,
+      color: 'bg-green-100 text-green-600'
+    },
+    {
       date: 'October 2022',
       title: 'Yunimall Wins EDC-PAU Demo Day',
       description: 'Our platform was recognized as the top student business solution at the Enterprise Development Centre Demo Day at Pan-Atlantic University.',

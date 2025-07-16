@@ -26,7 +26,7 @@ const Contact = () => {
     );
     
     // Open default email client
-    window.location.href = `mailto:4688postproductions@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:info@yuni-mall.com?subject=${subject}&body=${body}`;
     
     // Show success message and reset form
     setIsSubmitted(true);
@@ -68,8 +68,8 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-blue-900">Email</p>
-                    <a href="mailto:yunimall92@gmail.com" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
-                      yunimall92@gmail.com
+                    <a href="mailto:info@yuni-mall.com" className="text-gray-600 hover:text-blue-600 transition-colors duration-200">
+                      info@yuni-mall.com
                     </a>
                   </div>
                 </div>

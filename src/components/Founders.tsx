@@ -24,7 +24,7 @@ const Founders = () => {
         'Strategic Operations Leader',
         'Student Leadership Excellence'
       ],
-      bio: 'Leading operations and financial strategy at Yunimall',
+      bio: 'Leading operations and financial strategy at Yunimall. Passionate about student entrepreneurship.',
       linkedin: '#'
     }
   ];
@@ -76,8 +76,6 @@ const Founders = () => {
                       ))}
                     </div>
                   </div>
-
-                 
                 </div>
               </div>
             </div>
