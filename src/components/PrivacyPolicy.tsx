@@ -1,4 +1,3 @@
-import React from 'react';
 
 const PrivacyPolicy = () => (
   <section className="py-20 bg-white min-h-screen">

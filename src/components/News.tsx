@@ -13,7 +13,7 @@ const News = () => {
       color: 'bg-green-100 text-green-600'
     },
     {
-      date: 'October 2022',
+      date: 'November 2022',
       title: 'Yunimall Wins EDC-PAU Demo Day',
       description: 'Our platform was recognized as the top student business solution at the Enterprise Development Centre Demo Day at Pan-Atlantic University.',
       image: 'demo-day-winner.jpg',
