@@ -8,7 +8,7 @@ export default defineConfig({
     port: 5174, // changed to avoid conflict
   },
   plugins: [react()],
-  base: '/yunimall/',
+  base: '/',
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
