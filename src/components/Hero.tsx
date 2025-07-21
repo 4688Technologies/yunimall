@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowRight, Users, Store, Zap } from 'lucide-react';
+import ComingSoonModal from './ComingSoonModal';
 
 const Hero = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <section id="home" className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-white to-yellow-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -19,12 +21,18 @@ const Hero = () => {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="group flex items-center justify-center px-8 py-4 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg">
+              <button
+                className="group flex items-center justify-center px-8 py-4 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-all duration-200 transform hover:scale-105 shadow-lg"
+                onClick={() => setModalOpen(true)}
+              >
                 <Users className="w-5 h-5 mr-2" />
                 Join as a Buyer
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </button>
-              <button className="group flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-all duration-200 transform hover:scale-105 shadow-lg font-medium">
+              <button
+                className="group flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-all duration-200 transform hover:scale-105 shadow-lg font-medium"
+                onClick={() => setModalOpen(true)}
+              >
                 <Store className="w-5 h-5 mr-2" />
                 Join as a Seller
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -78,7 +86,10 @@ const Hero = () => {
                   </div>
                 </div>
 
-                <button className="w-full py-3 bg-yellow-400 text-blue-900 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200">
+                <button
+                  className="w-full py-3 bg-yellow-400 text-blue-900 rounded-lg font-medium hover:bg-yellow-500 transition-colors duration-200"
+                  onClick={() => setModalOpen(true)}
+                >
                   Browse Products
                 </button>
               </div>
@@ -89,6 +100,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
+    <ComingSoonModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };

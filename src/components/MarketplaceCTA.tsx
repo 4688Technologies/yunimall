@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ShoppingCart, Store, ArrowRight, Users, Star } from 'lucide-react';
+import ComingSoonModal from './ComingSoonModal';
 
 const MarketplaceCTA = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <section id="marketplace" className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -42,7 +44,10 @@ const MarketplaceCTA = () => {
                 </div>
               </div>
 
-              <button className="group w-full flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-300 transition-all duration-200 transform hover:scale-105 shadow-lg font-semibold">
+              <button
+                className="group w-full flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-300 transition-all duration-200 transform hover:scale-105 shadow-lg font-semibold"
+                onClick={() => setModalOpen(true)}
+              >
                 <Users className="w-5 h-5 mr-2" />
                 Join as a Buyer
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -76,7 +81,10 @@ const MarketplaceCTA = () => {
                 </div>
               </div>
 
-              <button className="group w-full flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg font-semibold">
+              <button
+                className="group w-full flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg font-semibold"
+                onClick={() => setModalOpen(true)}
+              >
                 <Star className="w-5 h-5 mr-2" />
                 Start Your Business
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -108,6 +116,7 @@ const MarketplaceCTA = () => {
           </div>
         </div>
       </div>
+    <ComingSoonModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };

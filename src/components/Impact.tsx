@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GraduationCap, BookOpen, Users, TrendingUp } from 'lucide-react';
+import ComingSoonModal from './ComingSoonModal';
 
 const Impact = () => {
+  const [modalOpen, setModalOpen] = useState(false);
   return (
     <section id="impact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,14 +110,33 @@ const Impact = () => {
               Join our community of student entrepreneurs and mentors making a difference across Africa
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium">
+              <button
+                className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium"
+                onClick={() => setModalOpen(true)}
+              >
                 Become a Mentor
               </button>
-              <button className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 font-medium">
+              <button
+                className="px-6 py-3 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 font-medium"
+                onClick={() => setModalOpen(true)}
+              >
                 Partner with Us
               </button>
             </div>
           </div>
+          <ComingSoonModal
+            open={modalOpen}
+            onClose={() => setModalOpen(false)}
+            title="Thank You for Your Interest!"
+            message={
+              <span>
+                We’re excited to connect with mentors and partners passionate about student entrepreneurship.<br />
+                Please reach out to us at <a href="mailto:info@yuni-mall.com" className="text-blue-900 underline">info@yuni-mall.com</a><br />
+                or follow us on Instagram <a href="https://instagram.com/yu_nimall" target="_blank" rel="noopener noreferrer" className="text-blue-900 underline">@yu_nimall</a> for updates and opportunities!
+              </span>
+            }
+            badge={<span className="inline-block px-4 py-2 bg-blue-900 text-yellow-400 rounded-lg font-semibold animate-pulse">🌟 Let's Make Impact Together! 🌟</span>}
+          />
         </div>
       </div>
     </section>
