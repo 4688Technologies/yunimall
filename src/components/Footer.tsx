@@ -1,6 +1,7 @@
 import { ShoppingBag, Instagram, Mail, ChevronUp } from 'lucide-react';
 import PrivacyPolicy from './PrivacyPolicy';
 import React, { useState, useEffect } from 'react';
+import ComingSoonModal from './ComingSoonModal';
 
 const Footer = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
@@ -79,6 +80,7 @@ const Footer = () => {
                     </button>
                   </li>
                 ))}
+
               </ul>
             </div>
 
@@ -178,6 +180,7 @@ const Footer = () => {
           </div>
         </div>
       )}
+
     </>
   );
 };

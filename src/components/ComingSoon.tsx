@@ -1,5 +1,6 @@
 import React from 'react';
 import { Truck, Package, MapPin, Clock } from 'lucide-react';
+import NotifyForm from './NotifyForm';
 
 const ComingSoon = () => {
   return (
@@ -115,16 +116,7 @@ const ComingSoon = () => {
             <p className="text-gray-600 mb-6">
               Be the first to know when Yunimall Logistics becomes available on your campus
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-              <button className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium">
-                Notify Me
-              </button>
-            </div>
+            <NotifyForm />
           </div>
         </div>
       </div>

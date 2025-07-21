@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Instagram, MapPin, Send, Phone } from 'lucide-react';
+import ComingSoonModal from './ComingSoonModal';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ const Contact = () => {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showPartnerModal, setShowPartnerModal] = useState(false);
+  const [showInvestorModal, setShowInvestorModal] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -101,12 +104,20 @@ const Contact = () => {
             <div className="bg-gradient-to-r from-blue-50 to-yellow-50 p-8 rounded-2xl">
               <h4 className="text-xl font-bold text-blue-900 mb-4">Quick Links</h4>
               <div className="space-y-3">
-                <a href="#" className="block text-gray-700 hover:text-blue-600 transition-colors duration-200">
+                <button
+                  type="button"
+                  onClick={() => setShowPartnerModal(true)}
+                  className="block text-left w-full text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                >
                   Partnership Opportunities
-                </a>
-                <a href="#" className="block text-gray-700 hover:text-blue-600 transition-colors duration-200">
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setShowInvestorModal(true)}
+                  className="block text-left w-full text-gray-700 hover:text-blue-600 transition-colors duration-200"
+                >
                   Investor Relations
-                </a>
+                </button>
                 <a href="#" className="block text-gray-700 hover:text-blue-600 transition-colors duration-200">
                   Support Center
                 </a>
@@ -197,6 +208,30 @@ const Contact = () => {
           </div>
         </div>
       </div>
+      <ComingSoonModal
+        open={showPartnerModal}
+        onClose={() => setShowPartnerModal(false)}
+        title="Partnership Opportunities"
+        message={
+          <>
+            <div className="mb-2 font-semibold text-blue-900">Thank you for your interest in partnering with Yunimall!</div>
+            <div className="text-blue-900">Our partnership program is launching soon. For early inquiries, email <a href="mailto:info@yuni-mall.com" className="underline text-yellow-500">info@yuni-mall.com</a>.</div>
+          </>
+        }
+        badge={<span className="bg-yellow-400 text-blue-900 px-3 py-1 rounded-full font-semibold animate-pulse">Coming Soon</span>}
+      />
+      <ComingSoonModal
+        open={showInvestorModal}
+        onClose={() => setShowInvestorModal(false)}
+        title="Investor Relations"
+        message={
+          <>
+            <div className="mb-2 font-semibold text-blue-900">Thank you for your interest in investing in Yunimall!</div>
+            <div className="text-blue-900">Our investor program is coming soon. For early conversations, email <a href="mailto:info@yuni-mall.com" className="underline text-yellow-500">info@yuni-mall.com</a>.</div>
+          </>
+        }
+        badge={<span className="bg-yellow-400 text-blue-900 px-3 py-1 rounded-full font-semibold animate-pulse">Coming Soon</span>}
+      />
     </section>
   );
 };
