@@ -1,7 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Trophy, Users, Calendar, ExternalLink } from 'lucide-react';
+import NewsModal from './NewsModal';
 
 const News = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    title: '',
+    image: '',
+    content: '' as React.ReactNode
+  });
   const milestones = [
     {
       date: 'December 2024',
@@ -84,7 +91,52 @@ const News = () => {
                   </p>
 
                   <div className="flex items-center space-x-4">
-                    <button className="flex items-center space-x-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200">
+                    <button
+                      className="flex items-center space-x-2 px-4 py-2 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200"
+                      onClick={() => {
+                        if (index === 0) {
+                          setModalContent({
+                            title: 'Augustine Achike Honored for Outstanding Entrepreneurial Impact',
+                            image: milestone.image,
+                            content: (
+                              <>
+                                <p>In 2024, Yunimall’s Co-founder and CEO, Augustine Achike, received the prestigious PAU Entrepreneurship Award, presented by the Enterprise Development Centre (EDC). This award is given to one outstanding graduating student from each class at Pan-Atlantic University, recognizing those who have demonstrated exceptional entrepreneurial spirit and initiative during their time in school.</p>
+                                <p className="mt-4">His win reflects the kind of talent that powers Yunimall: bold thinkers, strategic doers, and founders committed to solving real-world problems. It’s a proud moment not just for Augustine, but for the entire team building Yunimall from the ground up.</p>
+                              </>
+                            )
+                          });
+                        } else if (index === 1) {
+                          setModalContent({
+                            title: 'Yunimall Wins EDC Demo Day at Concept Stage',
+                            image: milestone.image,
+                            content: (
+                              <>
+                                <p>Yunimall was awarded as one of the best at the 2022 Enterprise Development Centre, Pan-Atlantic University Demo Day. Competing against other innovative early-stage concepts, our vision for a student-powered e-commerce marketplace stood out for its innovation and potential impact.</p>
+                                <p className="mt-4">This win provided a strong foundation for Yunimall’s growth, validating our mission and connecting us to mentorship opportunities that shaped our development journey.</p>
+                              </>
+                            )
+                          });
+                        } else if (index === 2) {
+                          setModalContent({
+                            title: 'Yunimall Named Top 5 & Wins 2nd Best Presenters',
+                            image: milestone.image,
+                            content: (
+                              <>
+                                <p>Yunimall was recognized as one of the Top 5 business ideas at PAU’s inaugural Demo Day, hosted by the Enterprise Development Centre (EDC). Representing the team, co-founders Ayomide Abiola and Ireayo Oloota delivered a high-energy pitch that earned Yunimall the title of 2nd Best Presenters out of all participating business ideas.</p>
+                                <p className="mt-4">The recognition marked a major milestone in our journey from idea to implementation and underscored our mission to build a student-focused e-commerce ecosystem that empowers student entrepreneurs.</p>
+                              </>
+                            )
+                          });
+                        } else {
+                          setModalContent({
+                            title: milestone.title,
+                            image: milestone.image,
+                            content: <p>{milestone.description}</p>
+                          });
+                        }
+                        setModalOpen(true);
+                      }}
+                    >
                       <span>Learn More</span>
                       <ExternalLink className="w-4 h-4" />
                     </button>
@@ -121,6 +173,13 @@ const News = () => {
           </div>
         </div>
       </div>
+    <NewsModal
+        isOpen={modalOpen}
+        onClose={() => setModalOpen(false)}
+        title={modalContent.title}
+        image={modalContent.image}
+        content={modalContent.content}
+      />
     </section>
   );
 };

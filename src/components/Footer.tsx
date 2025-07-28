@@ -1,4 +1,4 @@
-import { ShoppingBag, Instagram, Mail, ChevronUp } from 'lucide-react';
+import { ShoppingBag, Instagram, Mail, ChevronUp, Linkedin } from 'lucide-react';
 import PrivacyPolicy from './PrivacyPolicy';
 import React, { useState, useEffect } from 'react';
 import ComingSoonModal from './ComingSoonModal';
@@ -58,8 +58,11 @@ const Footer = () => {
                 Built by students, for students. Connecting student businesses with fellow students across African campuses.
               </p>
               <div className="flex space-x-4">
-                <a href="https://instagram.com/yu_nimall" className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-blue-900 transition-colors duration-200">
+                <a href="https://instagram.com/yu_nimall" className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-blue-900 transition-colors duration-200" target="_blank" rel="noopener noreferrer">
                   <Instagram className="w-5 h-5" />
+                </a>
+                <a href="https://www.linkedin.com/company/yunimall-limited/" className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-blue-900 transition-colors duration-200" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                  <Linkedin className="w-5 h-5" />
                 </a>
                 <a href="mailto:info@yuni-mall.com" className="w-10 h-10 bg-blue-800 rounded-full flex items-center justify-center hover:bg-yellow-400 hover:text-blue-900 transition-colors duration-200">
                   <Mail className="w-5 h-5" />
