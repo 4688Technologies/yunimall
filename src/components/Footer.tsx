@@ -115,11 +115,11 @@ const Footer = () => {
                   <span className="text-blue-100">RC: 7095154</span>
                 </li>
                 <li>
-                  <span className="text-blue-100">Lagos, Nigeria</span>
+                  <span className="text-blue-100">Km 52, Lekki-Epe Expressway, Ibeju-Lekki, Lagos</span>
                 </li>
-                <li>
+                {/* <li>
                   <span className="text-blue-100">yuni-mall.com</span>
-                </li>
+                </li> */}
                 <li>
                   <a href="mailto:info@yuni-mall.com" className="text-blue-100 hover:text-yellow-400 hover:underline transition-colors duration-200">info@yuni-mall.com</a>
                 </li>
@@ -147,9 +147,6 @@ const Footer = () => {
                 </button>
                 <a href="#" className="text-blue-100 hover:text-yellow-400 hover:underline transition-colors duration-200">
                   Terms of Service
-                </a>
-                <a href="#" className="text-blue-100 hover:text-yellow-400 hover:underline transition-colors duration-200">
-                  Support
                 </a>
               </div>
               <button

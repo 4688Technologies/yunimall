@@ -95,7 +95,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="font-semibold text-blue-900">Headquarters</p>
-                    <p className="text-gray-600">Lagos, Nigeria</p>
+                    <p className="text-gray-600">Km 52, Lekki-Epe Expressway, Ibeju-Lekki, Lagos</p>
                   </div>
                 </div>
               </div>
