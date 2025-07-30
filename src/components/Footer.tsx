@@ -1,10 +1,12 @@
 import { ShoppingBag, Instagram, Mail, ChevronUp, Linkedin } from 'lucide-react';
 import PrivacyPolicy from './PrivacyPolicy';
+import TermsAndConditions from './TermsAndConditions';
 import React, { useState, useEffect } from 'react';
 import ComingSoonModal from './ComingSoonModal';
 
 const Footer = () => {
   const [showPrivacy, setShowPrivacy] = useState(false);
+  const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
     if (!showPrivacy) return;
@@ -145,9 +147,12 @@ const Footer = () => {
                 >
                   Privacy Policy
                 </button>
-                <a href="#" className="text-blue-100 hover:text-yellow-400 hover:underline transition-colors duration-200">
-                  Terms of Service
-                </a>
+                <button
+                  onClick={() => setShowTerms(true)}
+                  className="text-blue-100 hover:text-yellow-400 hover:underline transition-colors duration-200"
+                >
+                  Terms and Conditions
+                </button>
               </div>
               <button
                 onClick={scrollToTop}
@@ -181,6 +186,9 @@ const Footer = () => {
         </div>
       )}
 
+      {showTerms && (
+        <TermsAndConditions isOpen={showTerms} onClose={() => setShowTerms(false)} />
+      )}
     </>
   );
 };
