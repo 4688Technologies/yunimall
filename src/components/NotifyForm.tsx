@@ -1,35 +1,53 @@
 import React, { useState } from 'react';
 
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/xnnzjlov';
+/**
+ * NotifyForm component shows a 'Notify Me' button. Clicking it opens a modal with the embedded Google Form.
+ */
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSellKa2cyIuRGLtodmb0NJiTEk3DDzKxB0WcfohvBK21467Lw/viewform?embedded=true";
 
 const NotifyForm: React.FC = () => {
-  const [submitted, setSubmitted] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  return submitted ? (
-    <div className="text-green-600 font-semibold py-4 animate-fade-in">
-      Thank you! You'll be notified when Yunimall Logistics launches on your campus.
-    </div>
-  ) : (
-    <form
-      action={FORMSPREE_ENDPOINT}
-      method="POST"
-      className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto"
-      onSubmit={() => setSubmitted(true)}
-    >
-      <input
-        type="email"
-        name="email"
-        required
-        placeholder="Enter your email"
-        className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-      />
+  return (
+    <div className="flex flex-col items-center py-8">
       <button
-        type="submit"
-        className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium"
+        className="px-6 py-3 bg-blue-900 text-white rounded-lg hover:bg-blue-800 transition-colors duration-200 font-medium shadow-lg"
+        onClick={() => setOpen(true)}
       >
         Notify Me
       </button>
-    </form>
+      {open && (
+        <div
+          className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-60"
+          onClick={() => setOpen(false)}
+        >
+          <div
+            className="bg-white rounded-lg shadow-2xl p-4 max-w-full w-[90vw] sm:w-[640px] relative"
+            onClick={e => e.stopPropagation()}
+          >
+            <button
+              className="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl font-bold"
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+            >
+              &times;
+            </button>
+            <iframe
+              src={GOOGLE_FORM_URL}
+              width="100%"
+              height="400"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              title="Notify Me Form"
+              style={{ border: 0 }}
+            >
+              Loading…
+            </iframe>
+          </div>
+        </div>
+      )}
+    </div>
   );
 };
 
