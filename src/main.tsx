@@ -5,6 +5,12 @@ import App from './App.tsx';
 import AboutPage from './pages/AboutPage.tsx';
 import './index.css';
 
+// Handle GitHub Pages SPA redirect
+const redirect = new URLSearchParams(window.location.search).get('redirect');
+if (redirect) {
+  window.history.replaceState(null, '', redirect);
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
