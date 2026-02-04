@@ -1,11 +1,15 @@
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, ShoppingBag } from 'lucide-react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import ComingSoonModal from './ComingSoonModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,10 +20,17 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsMenuOpen(false);
+    setIsMenuOpen(false);
+
+    if (isHomePage) {
+      // On homepage, scroll to section
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // On other pages, navigate to homepage with hash
+      navigate(`/#${id}`);
     }
   };
 
@@ -33,25 +44,24 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white shadow-lg' : 'bg-white/90 backdrop-blur-sm'
-    }`}>
+    <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-lg' : 'bg-white/90 backdrop-blur-sm'
+      }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <button
-  type="button"
-  className="flex items-center focus:outline-none"
-  aria-label="Refresh homepage"
-  onClick={() => window.location.reload()}
->
-  <img 
-    src={`${import.meta.env.BASE_URL}yunimall-logo.jpg`} 
-    alt="Yunimall Limited" 
-    className="h-10 w-auto"
-  />
-  <span className="ml-3 text-xl font-bold text-blue-900">Yunimall Limited</span>
-</button>
+            type="button"
+            className="flex items-center focus:outline-none"
+            aria-label="Go to homepage"
+            onClick={() => isHomePage ? window.scrollTo({ top: 0, behavior: 'smooth' }) : navigate('/')}
+          >
+            <img
+              src={`${import.meta.env.BASE_URL}yunimall-logo.jpg`}
+              alt="Yunimall Limited"
+              className="h-10 w-auto"
+            />
+            <span className="ml-3 text-xl font-bold text-blue-900">Yunimall Limited</span>
+          </button>
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex space-x-8">
@@ -123,10 +133,10 @@ const Header = () => {
           </div>
         )}
       </div>
-    <ComingSoonModal
-      open={modalOpen}
-      onClose={() => setModalOpen(false)}
-    />
+      <ComingSoonModal
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+      />
     </header>
   );
 };
