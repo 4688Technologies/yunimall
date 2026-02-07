@@ -1,12 +1,10 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, ShoppingBag } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import ComingSoonModal from './ComingSoonModal';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   const isHomePage = location.pathname === '/';
@@ -79,18 +77,22 @@ const Header = () => {
 
           {/* CTA Buttons */}
           <div className="hidden md:flex space-x-4">
-            <button
+            <a
+              href="https://app.yuni-mall.com/auth/register"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 text-blue-900 border border-blue-900 rounded-lg hover:bg-blue-900 hover:text-white transition-colors duration-200"
-              onClick={() => setModalOpen(true)}
             >
               Become a Buyer
-            </button>
-            <button
+            </a>
+            <a
+              href="https://app.yuni-mall.com/auth/register"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 font-medium"
-              onClick={() => setModalOpen(true)}
             >
               Become a Seller
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -116,27 +118,27 @@ const Header = () => {
                 </button>
               ))}
               <div className="flex flex-col space-y-2 px-3 pt-4">
-                <button
-                  className="w-full px-4 py-2 text-blue-900 border border-blue-900 rounded-lg hover:bg-blue-900 hover:text-white transition-colors duration-200"
-                  onClick={() => setModalOpen(true)}
+                <a
+                  href="https://app.yuni-mall.com/auth/register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-4 py-2 text-blue-900 border border-blue-900 rounded-lg hover:bg-blue-900 hover:text-white transition-colors duration-200 text-center"
                 >
                   Become a Buyer
-                </button>
-                <button
-                  className="w-full px-4 py-2 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 font-medium"
-                  onClick={() => setModalOpen(true)}
+                </a>
+                <a
+                  href="https://app.yuni-mall.com/auth/register"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full px-4 py-2 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-500 transition-colors duration-200 font-medium text-center"
                 >
                   Become a Seller
-                </button>
+                </a>
               </div>
             </div>
           </div>
         )}
       </div>
-      <ComingSoonModal
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-      />
     </header>
   );
 };

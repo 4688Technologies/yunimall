@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
 import { ShoppingCart, Store, ArrowRight, Users, Star } from 'lucide-react';
-import ComingSoonModal from './ComingSoonModal';
 
 const MarketplaceCTA = () => {
-  const [modalOpen, setModalOpen] = useState(false);
   return (
     <section id="marketplace" className="py-20 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +9,7 @@ const MarketplaceCTA = () => {
             Ready to Join the Yunimall Community?
           </h2>
           <p className="text-xl text-blue-100 max-w-3xl mx-auto">
-            Whether you're looking to shop from fellow students or start your own business, 
+            Whether you're looking to shop from fellow students or start your own business,
             Yunimall has everything you need to succeed
           </p>
         </div>
@@ -25,10 +22,10 @@ const MarketplaceCTA = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Become a Student Buyer</h3>
               <p className="text-blue-100 mb-6 leading-relaxed">
-                Access products and services from verified student businesses across your campus. 
+                Access products and services from verified student businesses across your campus.
                 Find everything from textbooks to tech accessories, snacks to study materials.
               </p>
-              
+
               <div className="space-y-3 mb-8">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
@@ -44,14 +41,16 @@ const MarketplaceCTA = () => {
                 </div>
               </div>
 
-              <button
+              <a
+                href="https://app.yuni-mall.com/auth/register"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full flex items-center justify-center px-8 py-4 bg-yellow-400 text-blue-900 rounded-lg hover:bg-yellow-300 transition-all duration-200 transform hover:scale-105 shadow-lg font-semibold"
-                onClick={() => setModalOpen(true)}
               >
                 <Users className="w-5 h-5 mr-2" />
                 Join as a Buyer
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </a>
             </div>
           </div>
 
@@ -62,10 +61,10 @@ const MarketplaceCTA = () => {
               </div>
               <h3 className="text-2xl font-bold mb-4">Become a Student Seller</h3>
               <p className="text-blue-100 mb-6 leading-relaxed">
-                Turn your skills and ideas into a profitable business. Join thousands of student 
+                Turn your skills and ideas into a profitable business. Join thousands of student
                 entrepreneurs who are building their future with Yunimall's powerful platform.
               </p>
-              
+
               <div className="space-y-3 mb-8">
                 <div className="flex items-center space-x-3">
                   <div className="w-2 h-2 bg-yellow-400 rounded-full"></div>
@@ -81,14 +80,16 @@ const MarketplaceCTA = () => {
                 </div>
               </div>
 
-              <button
+              <a
+                href="https://app.yuni-mall.com/auth/register"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group w-full flex items-center justify-center px-8 py-4 bg-white text-blue-900 rounded-lg hover:bg-gray-100 transition-all duration-200 transform hover:scale-105 shadow-lg font-semibold"
-                onClick={() => setModalOpen(true)}
               >
                 <Star className="w-5 h-5 mr-2" />
                 Start Your Business
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -116,7 +117,6 @@ const MarketplaceCTA = () => {
           </div>
         </div>
       </div>
-    <ComingSoonModal open={modalOpen} onClose={() => setModalOpen(false)} />
     </section>
   );
 };
