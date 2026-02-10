@@ -95,7 +95,6 @@ const TermsAndConditions: React.FC<TermsAndConditionsProps> = ({ isOpen, onClose
           <ul className="list-disc ml-6 space-y-1">
             <li>Browsing product listings and services.</li>
             <li>Making legitimate purchases or sales.</li>
-            <li>Using the in-app messaging system to communicate respectfully with other users.</li>
           </ul>
           <h4 className="font-semibold mt-4">Prohibited Activities:</h4>
           <ul className="list-disc ml-6 space-y-1">
